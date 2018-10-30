@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/inicioly" android:title="Inicio" android:icon="@drawable/ic_av_timer_black_24dp"></item>
+    <item android:id="@+id/gestionarly" android:title="Gestionar medicamentos" android:icon="@drawable/gestionar"></item>
+    <item android:id="@+id/calendarioly" android:title="Calendario programado" android:icon="@drawable/calendar" ></item>
+    <item android:id="@+id/farmaciasly" android:title="Farmacias cercanas" android:icon="@drawable/farmacia" ></item>
+    <item android:id="@+id/respaldarly" android:title="Respaldar información" android:icon="@drawable/bkup" ></item>
+
+
+</menu>

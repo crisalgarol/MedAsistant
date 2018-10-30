@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Med Assistant</string>
+    <string name="slogan">¿Cómo podemos ayudarte?</string>
+    <string name="siguiente">Siguiente...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
