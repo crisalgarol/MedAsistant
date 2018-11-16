@@ -2,10 +2,14 @@
 <resources>
     <color name="colorPrimary">#FFF</color>
     <color name="colorPrimaryDark">#3886E7</color>
-    <color name="colorAccent">#FFF</color>
+    <color name="colorAccent">#3886E7</color>
+    <color name="lightBlue">#BBDEFB</color>
     <color name="darkGrey">#6c6c6c</color>
     <color name="white">#FFF</color>
     <color name="actionBar">#FFFFFA</color>
     <color name="lightGray">#CACCCE</color>
     <color name="mediumGray">#86888A</color>
+    <color name="buttonSuccess">#388938</color>
+    <color name="attentionText">#F47329</color>
+    <color name="dangerText">#C93534</color>
 </resources>

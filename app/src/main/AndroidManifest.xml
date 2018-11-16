@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="csb.beko.com.medasistant">
 
+    <!--Permiso de escritura en almacenamiento externo-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +21,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".AgregarMedicamento"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+
+        <!--Agregar codigo para poder usar FileProvider-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.csb.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+
     </application>
 
 </manifest>

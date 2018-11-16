@@ -1,6 +1,8 @@
 package csb.beko.com.medasistant;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -13,11 +15,43 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 
+import Utilidades.SentenciasSQLite;
+
 public class Main extends AppCompatActivity {
 
 
     private DrawerLayout drawerLayout;
 
+    public ConexionSQLiteHelper baseDeDatos;
+    public static SQLiteDatabase dataBase;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        try {
+            //Inicializar la base de datos
+            baseDeDatos = new ConexionSQLiteHelper(this, SentenciasSQLite.NOMBRE_BASE_DE_DATOS, null, 1);
+            //Abrir la base para escritura
+            dataBase = baseDeDatos.getWritableDatabase();
+        }catch (Exception e){
+            Log.d("crisalgarol Main",  e.toString());
+        }
+        /*
+
+        ContentValues cv = new ContentValues();
+        cv.put(SentenciasSQLite.CAMPO_NOMBRE_MEDICAMENTOS, "Paracetamol");
+        cv.put(SentenciasSQLite.CAMPO_DESCRIPCION_MEDICAMENTOS, "Sirve para el dolor de cabeza");
+        cv.put(SentenciasSQLite.CAMPO_RUTAIMAGENMED_MEDICAMENTOS, "/beko/");
+        cv.put(SentenciasSQLite.CAMPO_RUTAIMAGENEMPA_MEDICAMENTOS, "/bekoEmp/");
+        cv.put(SentenciasSQLite.CAMPO_DOSIS_MEDICAMENTOS, "1 mg");
+        cv.put(SentenciasSQLite.CAMPO_IDDOCTOR_MEDICAMENTOS, "Dr. Beko");*/
+
+
+        //Long idRes = dataBase.insert(SentenciasSQLite.NOMBRE_TABLA_MEDICAMENTOS, SentenciasSQLite.CAMPO_DESCRIPCION_MEDICAMENTOS, cv) ;
+       // Log.d("crisalgarol Main", "ID Devuelto: " + idRes );
+
+    }
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -42,7 +76,7 @@ public class Main extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
-        actionbar.setHomeAsUpIndicator(R.drawable.ic_hamburguer);
+        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
         actionbar.setDisplayHomeAsUpEnabled(true);
 
 
